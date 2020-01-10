@@ -1,6 +1,6 @@
 {
-  "name": "agar-clone",
-  "description": "A simple Agar.io clone",
+  "name": "brainbook agar",
+  "description": "An Agar.io clone",
   "scripts": {
     "build": "gulp build",
     "start": "gulp run",
