@@ -438,7 +438,7 @@ io.on('connection', function (socket) {
                     x: currentPlayer.cells[i].x,
                     y: currentPlayer.cells[i].y,
                     radius: util.massToRadius(masa),
-                    speed: 25
+                    speed: 15
                 });
             }
         }
