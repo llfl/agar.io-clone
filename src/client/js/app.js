@@ -7,6 +7,20 @@ var playerNameInput = document.getElementById('playerNameInput');
 var socket;
 var reason;
 
+function GetUrlRelativePath()
+　　{
+　　　　var url = document.location.toString();
+　　　　var arrUrl = url.split("//");
+
+　　　　var start = arrUrl[1].indexOf("/");
+　　　　var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+
+　　　　if(relUrl.indexOf("?") != -1){
+　　　　　　relUrl = relUrl.split("?")[0];
+　　　　}
+　　　　return relUrl;
+　　};
+
 var debug = function(args) {
     if (console && console.log) {
         console.log(args);
@@ -51,6 +65,10 @@ window.onload = function() {
     var btn = document.getElementById('startButton'),
         btnS = document.getElementById('spectateButton'),
         nickErrorText = document.querySelector('#startMenu .input-error');
+
+    global.roomPath = GetUrlRelativePath()
+    var roomname = document.getElementById('roomname')
+    roomname.innerHTML='群智小球球'+global.roomPath;
 
     btnS.onclick = function () {
         startGame('spectate');
