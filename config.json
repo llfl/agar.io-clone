@@ -1,6 +1,6 @@
 {
     "host": "0.0.0.0",
-    "port": 3019,
+    "port": 3020,
     "logpath": "logger.php",
     "foodMass": 2,
     "fireFood": 16,
