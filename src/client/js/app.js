@@ -19,7 +19,7 @@ function GetUrlRelativePath()
 　　　　　　relUrl = relUrl.split("?")[0];
 　　　　}
 　　　　return relUrl;
-　　};
+　　}
 
 var debug = function(args) {
     if (console && console.log) {
@@ -66,8 +66,8 @@ window.onload = function() {
         btnS = document.getElementById('spectateButton'),
         nickErrorText = document.querySelector('#startMenu .input-error');
 
-    global.roomPath = GetUrlRelativePath()
-    var roomname = document.getElementById('roomname')
+    global.roomPath = GetUrlRelativePath();
+    var roomname = document.getElementById('roomname');
     roomname.innerHTML='群智小球球'+global.roomPath;
 
     btnS.onclick = function () {
