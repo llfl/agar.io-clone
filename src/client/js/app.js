@@ -18,7 +18,7 @@ function GetUrlRelativePath()
 　　　　if(relUrl.indexOf("?") != -1){
 　　　　　　relUrl = relUrl.split("?")[0];
 　　　　}
-       relUrl=relUrl.substring(0,relUrl.length-1)
+       relUrl=relUrl.substring(0,relUrl.length-1);
 　　　　return relUrl;
 　　}
 
