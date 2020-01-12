@@ -13,12 +13,12 @@ function GetUrlRelativePath()
 　　　　var arrUrl = url.split("//");
 
 　　　　var start = arrUrl[1].indexOf("/");
-　　　　var relUrl = arrUrl[1].substring(start);//stop省略，截取从start开始到结尾的所有字符
+　　　　var relUrl = arrUrl[1].substring(0,start);//stop省略，截取从start开始到结尾的所有字符
 
 　　　　if(relUrl.indexOf("?") != -1){
 　　　　　　relUrl = relUrl.split("?")[0];
 　　　　}
-       relUrl=relUrl.substring(0,relUrl.length-1);
+       relUrl=relUrl.substring(0,relUrl.indexOf("."));
 　　　　return relUrl;
 　　}
 
@@ -42,7 +42,7 @@ function startGame(type) {
     document.getElementById('startMenuWrapper').style.maxHeight = '0px';
     document.getElementById('gameAreaWrapper').style.opacity = 1;
     if (!socket) {
-        socket = io('https://game.brainbook.top'+global.roomPath,{query:"type=" + type});
+        socket = io({query:"type=" + type});
         setupSocket(socket);
     }
     if (!global.animLoopHandle)
