@@ -18,7 +18,8 @@ function GetUrlRelativePath()
 　　　　if(relUrl.indexOf("?") != -1){
 　　　　　　relUrl = relUrl.split("?")[0];
 　　　　}
-　　　　return relUrl;
+       
+　　　　return relUrl.substring(0,relUrl.Length-1);
 　　}
 
 var debug = function(args) {
@@ -41,7 +42,9 @@ function startGame(type) {
     document.getElementById('startMenuWrapper').style.maxHeight = '0px';
     document.getElementById('gameAreaWrapper').style.opacity = 1;
     if (!socket) {
-        socket = io({query:"type=" + type});
+        socket = io({
+            path:global.roomPath,
+            query:"type=" + type});
         setupSocket(socket);
     }
     if (!global.animLoopHandle)
