@@ -42,9 +42,7 @@ function startGame(type) {
     document.getElementById('startMenuWrapper').style.maxHeight = '0px';
     document.getElementById('gameAreaWrapper').style.opacity = 1;
     if (!socket) {
-        socket = io({
-            path:global.roomPath,
-            query:"type=" + type});
+        socket = io('https://game.brainbook.top'+global.roomPath,{query:"type=" + type});
         setupSocket(socket);
     }
     if (!global.animLoopHandle)
