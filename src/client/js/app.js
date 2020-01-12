@@ -18,8 +18,8 @@ function GetUrlRelativePath()
 　　　　if(relUrl.indexOf("?") != -1){
 　　　　　　relUrl = relUrl.split("?")[0];
 　　　　}
-       
-　　　　return relUrl.substring(0,relUrl.Length-1);
+       relUrl=relUrl.substring(0,relUrl.length-1)
+　　　　return relUrl;
 　　}
 
 var debug = function(args) {
